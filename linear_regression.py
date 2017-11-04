@@ -17,7 +17,7 @@ def best_fit_slope(x,y):
 m, b = best_fit_slope(x,y)
 regression_line = [(m*x) + b for ex in x]
 
-predict_x = 71.9
+predict_x = 70
 predict_y = (m * predict_x) + b
 print('given height to predict weight(in inches):',predict_x)
 print('weight in pound:',predict_y)
