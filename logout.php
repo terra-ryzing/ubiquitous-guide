@@ -1,14 +1,7 @@
 <?php
-// Initialize the session
 session_start();
- 
-// Unset all of the session variables
-$_SESSION = array();
- 
-// Destroy the session.
+unset($_SESSION['sess_user']);
 session_destroy();
- 
-// Redirect to login page
-header("location: login.php");
-exit;
+header("Location: login.php");
 ?>
+Did you find apk for android? You can find new Free Android Games and apps.

@@ -1,28 +1,42 @@
 <?php
-// Initialize the session
 session_start();
- 
-// If session variable is not set it will redirect to login page
-if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
-  header("location: login.php");
-  exit;
+if(!isset($_SESSION["sess_user"])){
+ header("Location: login.php");
 }
+else
+{
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
+<meta charset="UTF-8">
+<title>Welcome</title>
 </head>
+<h1>Welcome <?=$_SESSION['sess_user'];?></h1>
+<p>Page under construction</p>
+<p><a href="logout.php" class="logout">Logout</a></p>
 <body>
-    <div class="page-header">
-        <h1>Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to our site.</h1>
-    </div>
-    <p><a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a></p>
+<style>
+h1{
+	font-family: Helvetica Neue;
+	font-size:55px;
+	color:black;
+	text-align:center;
+}
+p{
+font-family: Helvetica Neue;
+	font-size:45px;
+	color:black;
+	text-align:center;
+}
+	
+
+body{
+    background-color: #e05915;
+}
+</style>
 </body>
 </html>
+<?php
+}
+?>
